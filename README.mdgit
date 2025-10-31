@@ -1,0 +1,1 @@
+"# to_do_list"  initgit add README.mdgit commit -m "first commit"git branch -M maingit remote add origin https://github.com/nguyenngoc1211/to_do_list.gitgit push -u origin main
