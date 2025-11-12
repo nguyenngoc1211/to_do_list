@@ -239,12 +239,17 @@ def parse_dt(s):
 
 def qdatetime_from_str(s):
     dt = parse_dt(s)
-    if dt:
-        return QtCore.QDateTime(dt)
-    return QtCore.QDateTime.currentDateTime()
+    if not dt:
+        return QtCore.QDateTime.currentDateTime()
+    return QtCore.QDateTime(
+        QtCore.QDate(dt.year, dt.month, dt.day),
+        QtCore.QTime(dt.hour, dt.minute, dt.second)
+    )
 
 
 def format_qdatetime(dt: QtCore.QDateTime) -> str:
+    if not dt or not dt.isValid():
+        return ""
     return dt.toPyDateTime().strftime(DT_FMT)
 
 
@@ -372,7 +377,10 @@ class TaskDialog(QtWidgets.QDialog):
     def get_data(self):
         text = self.text_edit.text().strip()
         priority = int(self.priority_combo.currentData())
-        due = format_qdatetime(self.due_edit) if self.due_checkbox.isChecked() else None
+        due = None
+        if self.due_checkbox.isChecked():
+            due_str = format_qdatetime(self.due_edit)
+            due = due_str or None
         note = self.note_edit.toPlainText().strip() or None
         return {"text": text, "priority": priority, "due_dt": due, "note": note}
 
