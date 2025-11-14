@@ -477,6 +477,6 @@ python todo.py
 
 ---
 
-**Tác giả:** [Tên của bạn]
+**Tác giả:** [SEALORL]
 **Ngày cập nhật:** 2025-11-15
 **Phiên bản:** 1.0
