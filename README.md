@@ -17,10 +17,10 @@ Lưu trữ công việc trong file JSON và hỗ trợ xem theo danh sách, theo
   - Trong ngày / Trong tuần  
 - Hoàn tác thao tác xóa (`Ctrl+Z`)
 - Di chuyển thứ tự công việc (khi không lọc/sắp xếp)
-- Giao diện trực quan, đa tab với phong cách hiện đại:
-  1. **Danh sách:** Bảng điều khiển quản lý công việc với biểu đồ tiến độ, các thẻ tóm tắt và thẻ công việc giàu thông tin (ưu tiên, hạn chót, ghi chú).
-  2. **Trong ngày:** Lịch trong ngày cho phép chọn nhanh bằng `QDateEdit` và xem chi tiết công việc trong bảng có tooltip ghi chú.
-  3. **Trong tuần:** Tổng quan tuần với bộ chọn ngày dạng lịch, bảng co giãn tự động và đếm số việc theo tuần.
+- Giao diện trực quan, đa tab:
+  1. **Danh sách:** Toàn bộ công việc
+  2. **Trong ngày:** Hiển thị công việc theo ngày cụ thể
+  3. **Trong tuần:** Hiển thị công việc theo tuần
 
 ---
 
@@ -78,8 +78,6 @@ python3 todo.py
 | **Space** | Đánh dấu hoàn thành |
 | **Delete** | Xóa công việc |
 | **Ctrl + Z** | Hoàn tác (Undo) |
-
-Ngoài ra, bạn có thể **nhấp đúp** vào thẻ công việc để mở hộp thoại chỉnh sửa nhanh.
 
 ---
 
